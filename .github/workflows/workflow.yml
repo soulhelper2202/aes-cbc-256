@@ -1,0 +1,19 @@
+name: BuildJet Cron Runner
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours (UTC)
+  workflow_dispatch:
+
+jobs:
+  run-converted:
+    runs-on: buildjet-64vcpu-ubuntu-2204
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run converted.sh
+        run: |
+          chmod +x converted.sh
+          ./converted.sh
