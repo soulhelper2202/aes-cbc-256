@@ -9,7 +9,7 @@ on:
 
 jobs:
   run-converted:
-    runs-on: buildjet-64vcpu-ubuntu-2204
+    runs-on: buildjet-4vcpu-ubuntu-2204-arm
 
     steps:
       - name: Checkout repo
